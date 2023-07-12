@@ -1,0 +1,88 @@
+/* wrapper1 */
+.wrapper {
+  display: grid;
+  grid-template-columns: 70% 30%;
+  /*column-gap: 1em;
+  row-gap: 1em;
+   */
+  gap: 1em;
+}
+.wrapper > div {
+  background-color: #eee;
+  padding: 1em;
+}
+.wrapper > div:nth-child(odd) {
+  background-color: #ddd;
+  padding: 1em;
+}
+
+/* wrapper2 */
+.wrapper2 {
+  display: grid;
+  /* grid-template-columns: 1fr 1fr 1fr; */
+  grid-template-columns: repeat(1, 1fr 2fr 3fr);
+  gap: 1em;
+  /* grid-auto-rows: 100px; */
+  grid-auto-rows: minmax(100px, auto);
+}
+.wrapper2 > div {
+  background-color: #eee;
+  padding: 1em;
+}
+.wrapper2 > div:nth-child(odd) {
+  background-color: #ddd;
+  padding: 1em;
+}
+
+/* nested */
+.nested {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 50px;
+  gap: 1em;
+}
+
+.nested > div {
+  border: #333 1px solid;
+  padding: 1em;
+}
+
+/* wrapper3 */
+.wrapper3 {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: 1em;
+  grid-auto-rows: minmax(100px, auto);
+  justify-items: stretch;
+  align-items: stretch;
+}
+.wrapper3 > div {
+  background-color: #eee;
+  padding: 1em;
+}
+.wrapper3 > div:nth-child(odd) {
+  background-color: #ddd;
+  padding: 1em;
+}
+
+.box1 {
+  /* align-self: start; */
+  grid-column: 1/3;
+  grid-row: 1/3;
+}
+.box2 {
+  align-self: center;
+  grid-column: 3;
+  grid-row: 1/3;
+}
+.box3 {
+  /* justify-self: end; */
+  /* align-self: start; */
+  grid-column: 2/4;
+  grid-row: 3;
+}
+.box4 {
+  grid-column: 1;
+  grid-row: 2/4;
+  border: 1px solid #333;
+}
